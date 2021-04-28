@@ -24,7 +24,7 @@ export const createEventCardTemplate = (tripPoint) => {
         <span class="event__offer-title">${offer.name}</span>
         &plus;
         &euro;&nbsp;<span class="event__offer-price">${offer.price}</span>
-       </li>`).join(` `)}
+       </li>`).join(' ')}
     </ul>
     <button class="event__rollup-btn" type="button">
       <span class="visually-hidden">Open event</span>

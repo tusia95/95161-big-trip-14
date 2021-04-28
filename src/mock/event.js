@@ -15,31 +15,28 @@ const MAX_DESTINATIONS = 10;
 const MIN_PHOTO = 1;
 const MAX_PHOTO = 5;
 
-const MAX_EVENT_DURATION = 4;
-
-
-const tripPointTypes = [`taxi`, `bus`, `check-in`, `drive`, `flight`, `restaurant`, `ship`, `sightseeing`, `train`, `transport`];
+const tripPointTypes = ['taxi', 'bus', 'check-in', 'drive', 'flight', 'restaurant', 'ship', 'sightseeing', 'train', 'transport'];
 // to
 export const TRANSFER_EVENTS = [
-  `taxi`,
-  `bus`,
-  `train`,
-  `ship`,
-  `transport`,
-  `drive`,
-  `flight`,
+  'taxi',
+  'bus',
+  'train',
+  'ship',
+  'transport',
+  'drive',
+  'flight',
 ];
 
 // in
 export const ACTIVITY_EVENTS = [
-  `check-in`,
-  `sightseeing`,
-  `restaurant`,
+  'check-in',
+  'sightseeing',
+  'restaurant',
 ];
 
 
-const cityNames = [`Amsterdam`, `Geneva`, `Zurich`, `Saint-Petersburg`, `Limassol`];
-const optionsNames = [`Add luggage`, `Switch to comfort class`, `Add meal`, `Choose seats`];
+const cityNames = ['Amsterdam', 'Geneva', 'Zurich', 'Saint-Petersburg', 'Limassol'];
+const optionsNames = ['Add luggage', 'Switch to comfort class', 'Add meal', 'Choose seats'];
 
 const destinationDescr = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet varius magna, non porta ligula feugiat eget. Fusce tristique felis at fermentum pharetra. Aliquam id orci ut lectus varius viverra. Nullam nunc ex, convallis sed finibus eget, sollicitudin eget ante. Phasellus eros mauris, condimentum sed nibh vitae, sodales efficitur ipsum. Sed blandit, eros vel aliquam faucibus, purus ex euismod diam, eu luctus nunc ante ut dui. Sed sed nisi sed augue convallis suscipit in sed felis. Aliquam erat volutpat. Nunc fermentum tortor ac porta dapibus. In rutrum ac purus sit amet tempus.';
 const descriptions = destinationDescr.split('.');

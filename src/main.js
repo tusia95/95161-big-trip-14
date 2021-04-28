@@ -1,4 +1,4 @@
-const TRIP_POINTS_NUMBER = 3;
+
 import {createEventCardTemplate} from './view/event-card';
 import {createMenuTemplate} from './view/menu';
 import {createEventEditTemplate} from './view/event-edit';

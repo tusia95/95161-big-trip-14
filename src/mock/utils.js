@@ -39,7 +39,6 @@ export const formatTypeWithPreposition = (type) => {
 
 export const formatDate = (date) => {
   const year = date.getFullYear();
-  console.log(`this is ${year}`);
   const day = date.getDate();
   const month = date.getMonth();
   const hours = date.getHours();
