@@ -2,29 +2,33 @@ import {TRANSFER_EVENTS, ACTIVITY_EVENTS} from './event';
 
 export const MONTHS_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-export const getTotalSum = (tripPoints)=> {
-  const pointsSum = tripPoints.reduce((sum, current) => {
-    return sum + current.price;
-  }, 0);
-
-  // ".event__offer-checkbox:checked"
-  const pointOptionsSum = tripPoints.map((tripPoint) => {
-    if (tripPoint.offers) {
-      tripPoint.offers.reduce((sum, current) => {
-        return sum + current.price;
-      }, 0);
+export const getTotalSum = (tripPoints) => {
+  const prices = tripPoints.map((tripPoint) => tripPoint.price);
+  const pointsOptions = tripPoints.map((tripPoint) => {
+    let pointOffer;
+    if (tripPoint.offers.length) {
+      pointOffer = tripPoint.offers;
     }
+    else pointOffer = 0;
+
+    return pointOffer;
+
   });
 
-
-  const totalOptionsSum = pointOptionsSum.reduce((sum, current) => {
+  const optionPrices = pointsOptions.map(getPointOptionsPrices).flat();
+  const optionsPricesSum = optionPrices.reduce((sum, current)=> { return sum + current;}, 0);
+  const pointsSum = prices.reduce((sum, current) => {
     return sum + current;
   }, 0);
-
-  return pointsSum + totalOptionsSum;
+  return pointsSum + optionsPricesSum;
 };
 
-
+export const getPointOptionsPrices = (pointOptions)=> {
+  if (pointOptions) {
+    return pointOptions.map((pointOption) => pointOption.price);
+  }
+  else return 0;
+};
 export const formatTypeWithPreposition = (type) => {
   switch (true) {
     case TRANSFER_EVENTS.indexOf(type) >= 0:
